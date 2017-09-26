@@ -1,0 +1,8 @@
+#outerlist > li:before{
+    content: counter(OuterItem) ".";
+    counter-increment: OuterItemCount 2;
+}
+ul.innerlist > li:before{
+    content: counter(InnerItemCount, lower-alpha) ".";
+    counter-increment: InnerItemCount;
+}

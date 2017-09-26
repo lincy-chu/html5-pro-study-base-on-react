@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>简单的html5 File测试 for pic2base64</title>
+</head>
+<style type="text/css">
+    #canvas{
+        border: 1px solid #f70707;
+    }
+</style>
+<body>
+<input type="file" accept="image/*" capture="camera"  id="demo_input" />
+<img src="" id="demoa">
+
+</body>
+<script>
+    window.onload = function(){
+        var demo=document.getElementById("demo_input");
+        var demoa=document.getElementById("demoa");
+        //判断浏览器是否支持FileReader
+        if(window.FileReader){
+            demo.addEventListener("change",chang,false)
+        }else{
+            alert("浏览器不支持")
+        }
+        function chang(){
+            var file=this.files[0];
+            //利用正则表达式判断图片的格式
+            if(!/(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(file.type)){
+                alert("上传的图片的格式不对");
+                return;
+            }
+            //获取上传图片的base64
+            var reader=new FileReader(file);
+            reader.readAsDataURL(file);
+            //利用canvas对图片进行等比例缩放和压缩
+            reader.onload=function(){
+                var canvas=document.createElement("canvas");
+                var ctx=canvas.getContext("2d");
+                var image=new Image();
+                image.src=this.result;
+                image.onload=function(){
+                    var cw=image.width;
+                    var ch=image.height;
+                    var w=image.width;
+                    var h=image.height;
+                    canvas.width=w;
+                    canvas.height=h;
+                    if(cw>400&&cw>ch){
+                        w=400;
+                        h=(400*ch)/cw;
+                        canvas.width=w;
+                        canvas.height=h;
+                    }
+                    if(ch>400&&ch>cw){
+                        h=400;
+                        w=(400*cw)/ch;
+                        canvas.width=w;
+                        canvas.height=h;
+
+                    }
+                    ctx.drawImage(image,0,0,w,h);
+                    canvas.toDataURL("image/jpeg",0.7);
+                }
+
+            }
+        }
+
+
+    }
+
+</script>
+</html>

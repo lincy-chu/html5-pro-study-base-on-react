@@ -1,0 +1,143 @@
+span.class2{
+    border: 1px solid orangered;
+    padding: 5px;
+}
+#demo_1 [href]{
+    border: 1px solid darkorchid;
+    padding: 5px;
+}
+#demo_2 [href='http://www.mi.com']{
+    border: 1px solid greenyellow;
+    padding: 5px;
+}
+#demo_3 [href^='demo']{
+    background-color: #f70707;
+}
+#demo_4 [class~='a1']{
+    background-color: darkorchid;
+}
+#demo_5 [lang|='en']{
+    border: 1px solid orangered;
+    padding: 5px;
+}
+#demo_6 a, #demo_6 [lang="en"]{
+    border: 1px solid orangered;
+    margin: 3px;
+}
+#demo_7 > * > * > strong{
+    border: 1px solid orangered;
+}
+#demo_8 > p + span{
+    border: 1px solid orangered;
+}
+#demo_9 > p ~ span{
+    border: 1px solid orangered;
+}
+#demo_10 ::first-line{
+    background: orangered;
+}
+#demo_11 ::first-letter{
+    background: orangered;
+}
+#demo_12 a:before{
+    content: "Click here to"
+}
+#demo_12 p:after{
+    content: '!';
+}
+#demo_13{
+    counter-reset: paracount;
+}
+#demo_13 p:before{
+    content: counter(paracount) '.';
+    counter-increment: paracount;
+}
+:root{
+    border: 1px solid orangered;
+}
+#demo_15 :first-child{
+    background: orangered;
+}
+#demo_16 :last-child{
+    background: orangered;
+    color: #ffffff;
+}
+#demo_17 * :only-child{
+    background: orangered;
+    color: #fff;
+}
+#demo_18 * :only-of-type{
+    background: orangered;
+    color: #ffffff;
+}
+#demo_19 :nth-child(2){
+    background: orangered;
+    color: #ffffff;
+}
+#demo_20 :nth-last-child(3){
+    background: orangered;
+    color: #ffffff;
+}
+#demo_21 :nth-of-type(3){
+    background: orangered;
+    color: #ffffff;
+}
+#demo_22 :nth-last-of-type(2){
+    background: orangered;
+    color: #ffffff;
+}
+#demo_23 :enabled{
+    background: orangered;
+    color: #ffffff;
+}
+#demo_23 :disabled{
+    background: deepskyblue;
+    color: #ffffff;
+}
+#demo_24 :checked + label{
+    background: orangered;
+}
+#demo_25 :default{
+    background: orangered;
+    color: #ffffff;
+}
+#demo_26 :valid{
+    outline: 2px solid orangered;
+}
+#demo_26 :invalid{
+    outline: 2px solid deepskyblue;
+}
+#demo_27 label :in-range{
+    outline: 1px solid orangered;
+}
+#demo_27 :out-of-range{
+    outline: 1px solid deepskyblue;
+}
+#demo_28 :required{
+    outline: 1px solid orangered;
+}
+#demo_28 :optional{
+    outline: 1px solid deepskyblue;
+}
+#demo_29 :link{
+    color: orangered;
+}
+#demo_29 :visited{
+    color: deepskyblue;
+}
+#demo_30 p:hover{
+    background: orangered;
+    color: #ffffff;
+}
+#demo_31 :focus{
+    outline: 1px solid orangered;
+}
+#demo_32 a:not([href*='w3c']){
+    background-color: orangered;
+    color: #ffffff;
+}
+#demo_33 p:empty{
+    background-color: #f70707;
+    color: #ffffff;
+    padding: 5px;
+}
